@@ -114,6 +114,7 @@ spec:
             - name: metrics
               containerPort: {{ .Values.exporter.port | int }}
               protocol: TCP
+          {{- if .Values.probes.enabled }}
           readinessProbe:
             httpGet:
               path: /metrics
@@ -123,6 +124,7 @@ spec:
             tcpSocket:
               port: metrics
             initialDelaySeconds: 10
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- if or (eq (lower (.Values.exporter.github.authType | default "")) "app") .Values.exporter.github.caBundle }}
