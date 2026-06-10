@@ -142,3 +142,8 @@ allure/
 
 # charts
 *.tgz
+
+# SAP CCEE local-only deployment values (kept untracked on purpose; the
+# file holds environment-specific config like the ccee-bot token reference,
+# the SAP root CA, and the github.wdf.sap.corp baseUrl).
+values-sap-ghe.yaml

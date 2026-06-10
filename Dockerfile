@@ -24,6 +24,9 @@ RUN --mount=type=cache,target=/root/.cache/ \
 
 FROM base AS run
 
+LABEL source_repository="https://github.com/databus23/github-rate-limits-exporter/tree/ghe-support"
+LABEL org.opencontainers.image.source="https://github.com/databus23/github-rate-limits-exporter/tree/ghe-support"
+
 COPY --from=build-env /opt/venv /opt/venv
 
 WORKDIR /app
