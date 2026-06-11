@@ -12,4 +12,6 @@ maintainers:
     email: tgeorgomanolis@gmail.com
 type: application
 # 1-1 as application source code
-version: 0.7.6
+# Pre-release suffix marks this as a fork build, so it sorts after 0.7.6
+# but is treated as distinct by Helm/SemVer dependency resolvers.
+version: 0.7.6-ghe-support.1
